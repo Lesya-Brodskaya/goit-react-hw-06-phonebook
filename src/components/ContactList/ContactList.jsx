@@ -1,16 +1,20 @@
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { List, Item, Text, Button } from './ContactList.styled';
+import { deleteContact } from 'redux/contactsSlice';
 
-const ContactList = ({ contacts, onDeleteContact }) => {
+const ContactList = ({ listContact }) => {
+  const dispatch = useDispatch();
+
   return (
     <List>
-      {contacts.map(({ id, name, number }) => {
+      {listContact.map(({ id, name, number }) => {
         return (
           <Item key={id}>
             <Text>
               {name}: {number}
             </Text>
-            <Button type="submit" onClick={() => onDeleteContact(id)}>
+            <Button type="submit" onClick={() => dispatch(deleteContact(id))}>
               Delete
             </Button>
           </Item>
