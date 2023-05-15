@@ -37,7 +37,7 @@ const ContactForm = () => {
 
     const contactExists = contacts.find(
       contact =>
-        (contact.name === name.toLowerCase() && contact.number === number) ||
+        contact.name.toLowerCase() === name.toLowerCase() ||
         contact.number === number
     );
 

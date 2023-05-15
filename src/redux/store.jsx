@@ -16,7 +16,6 @@ import { filterSlice } from './filterSlice';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['contacts'],
 };
 
 const persistedReducer = persistReducer(persistConfig, contactsSlice.reducer);
