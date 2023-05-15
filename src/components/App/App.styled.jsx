@@ -19,9 +19,9 @@ export const Contacts = styled.h2`
   text-align: center;
 `;
 
-export const AllСontacts = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 10px;
-`;
+// export const AllСontacts = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   margin-bottom: 10px;
+// `;

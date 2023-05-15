@@ -1,14 +1,16 @@
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { List, Item, Text, Button } from './ContactList.styled';
 import { deleteContact } from 'redux/contactsSlice';
+import { filterContact } from 'redux/selectors';
+import { List, Item, Text, Button } from './ContactList.styled';
 
-const ContactList = ({ listContact }) => {
+const ContactList = () => {
+  const contacts = useSelector(filterContact);
   const dispatch = useDispatch();
 
   return (
     <List>
-      {listContact.map(({ id, name, number }) => {
+      {contacts.map(({ id, name, number }) => {
         return (
           <Item key={id}>
             <Text>
