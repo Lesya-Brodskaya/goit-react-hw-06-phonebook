@@ -35,11 +35,15 @@ const ContactForm = () => {
       number,
     };
 
-    if (contacts.find(contact => contact.name === name.toLowerCase())) {
-      return alert(`${name} is already in contacts`);
-    } else {
-      dispatch(addContact(contact));
-    }
+    const contactExists = contacts.find(
+      contact =>
+        (contact.name === name.toLowerCase() && contact.number === number) ||
+        contact.number === number
+    );
+
+    contactExists
+      ? alert(`${name} is already in contacts`)
+      : dispatch(addContact(contact));
 
     setName('');
     setNumber('');
